@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Netflix Clone</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color:#000;
+    color:#fff;
+}
+
+/* Navbar */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    position:absolute;
+    width:100%;
+    z-index:10;
+}
+
+.logo{
+    color:#e50914;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.signin-btn{
+    background:#e50914;
+    border:none;
+    padding:8px 15px;
+    color:white;
+    border-radius:4px;
+    cursor:pointer;
+}
+
+/* Hero Section */
+.hero{
+    height:100vh;
+    background:url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4') no-repeat center center/cover;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.overlay{
+    background:rgba(0,0,0,0.7);
+    padding:40px;
+    border-radius:10px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.email-box{
+    display:flex;
+    justify-content:center;
+}
+
+.email-box input{
+    padding:10px;
+    width:250px;
+    border:none;
+    outline:none;
+}
+
+.email-box button{
+    padding:10px 20px;
+    border:none;
+    background:#e50914;
+    color:white;
+    cursor:pointer;
+}
+
+/* Movies Section */
+.movies{
+    padding:50px;
+}
+
+.movies h2{
+    margin-bottom:20px;
+}
+
+.movie-row{
+    display:flex;
+    gap:15px;
+    overflow-x:auto;
+}
+
+.movie-row img{
+    width:200px;
+    height:300px;
+    border-radius:5px;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.movie-row img:hover{
+    transform:scale(1.1);
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">NETFLIX</div>
+    <button class="signin-btn" onclick="signIn()">Sign In</button>
+</div>
+
+<section class="hero">
+    <div class="overlay">
+        <h1>Unlimited movies, TV shows and more</h1>
+        <p>Watch anywhere. Cancel anytime.</p>
+        <div class="email-box">
+            <input type="email" id="email" placeholder="Enter your email">
+            <button onclick="getStarted()">Get Started</button>
+        </div>
+    </div>
+</section>
+
+<section class="movies">
+    <h2>Popular on Netflix</h2>
+    <div class="movie-row">
+        <img src="https://picsum.photos/200/300?1">
+        <img src="https://picsum.photos/200/300?2">
+        <img src="https://picsum.photos/200/300?3">
+        <img src="https://picsum.photos/200/300?4">
+        <img src="https://picsum.photos/200/300?5">
+        <img src="https://picsum.photos/200/300?6">
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Netflix Clone | Created for Practice</p>
+</footer>
+
+<script>
+function signIn(){
+    alert("Sign In button clicked!");
+}
+
+function getStarted(){
+    var email = document.getElementById("email").value;
+    if(email === ""){
+        alert("Please enter your email.");
+    } else {
+        alert("Welcome! Email entered: " + email);
+    }
+}
+</script>
+
+</body>
+</html>
